@@ -11,34 +11,6 @@
     <artifactId>fhbay-client</artifactId>
     <packaging>jar</packaging>
 
-    <properties>
-        <wildfly.client.version>10.1.0.Final</wildfly.client.version>
-        <jboss.spec.javaee.version>1.0.4.Final</jboss.spec.javaee.version>
-    </properties>
-
-    <build>
-        <plugins>
-            <!-- Add the maven exec plugin to allow us to run a java program via maven -->
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>1.4.0</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>java</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <mainClass>sve2.fhbay.client.FhBayConsoleClient</mainClass>
-                    <cleanupDaemonThreads>false</cleanupDaemonThreads>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
-
-
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -60,7 +32,6 @@
     </dependencyManagement>
 
     <dependencies>
-
         <!-- fhbay-beans client library -->
         <dependency>
             <groupId>sve2.ejb</groupId>
@@ -135,7 +106,27 @@
             <artifactId>logback-classic</artifactId>
             <version>${logback.version}</version>
         </dependency>
-
     </dependencies>
 
+    <build>
+        <plugins>
+            <!-- Add the maven exec plugin to allow us to run a java program via maven -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.4.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <mainClass>sve2.fhbay.client.FhBayConsoleClient</mainClass>
+                    <cleanupDaemonThreads>false</cleanupDaemonThreads>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

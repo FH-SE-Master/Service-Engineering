@@ -1,21 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ejb-jar xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="
+<ejb-jar xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="
         http://xmlns.jcp.org/xml/ns/javaee
-        http://xmlns.jcp.org/xml/ns/javaee/ejb-jar_3_2.xsd" 
-    version="3.2">
-
-<!--    <enterprise-beans>
+        http://xmlns.jcp.org/xml/ns/javaee/ejb-jar_3_2.xsd"
+         version="3.2">
+    <enterprise-beans>
         <session>
             <ejb-name>SimpleCustomerDaoBean</ejb-name>
-            <ejb-class>sve2.fhbay.bean.dao.SimpleCustomerDaoBean2</ejb-class>
-            &lt;!&ndash;@Resource(name = "jdbc/FhBayDS", mappedName = "java:jboss/datasources/FhBayDS", type = DataSource.class)&ndash;&gt;
+            <ejb-class>sve2.fhbay.bean.dao.SimpleCustomerDaoBean</ejb-class>
             <resource-ref>
+                <!--  @Resource(name="jdbc/FhBayDS", mappedName="java:jboss/datasources/FhBayDS", type=DataSource.class)  -->
+
+                <!--  variant 1b, 2b, 2c  -->
                 <res-ref-name>jdbc/FhBayDS</res-ref-name>
                 <res-type>javax.sql.DataSource</res-type>
                 <mapped-name>java:jboss/datasources/FhBayDS</mapped-name>
+                <injection-target>
+                    <!--  varaint 2c  -->
+                    <injection-target-class>sve2.fhbay.bean.dao.SimpleCustomerDaoBean</injection-target-class>
+                    <injection-target-name>dataSource</injection-target-name>
+                </injection-target>
             </resource-ref>
         </session>
-    </enterprise-beans>-->
+    </enterprise-beans>
 </ejb-jar>
