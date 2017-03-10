@@ -1,0 +1,5 @@
+version: "2.1"
+services:
+    wildfly-ejb:
+        container_name: intellij-wildfly-ejb
+        image: intellij-wildfly-ejb

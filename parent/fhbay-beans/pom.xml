@@ -117,6 +117,62 @@
                 </configuration>
             </plugin>
 
+            <!-- Full doc: https://dmp.fabric8.io/-->
+            <!-- Git repo: https://github.com/fabric8io/docker-maven-plugin-->
+            <plugin>
+                <groupId>io.fabric8</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>0.20.0</version>
+                <configuration>
+                    <skipMachine>true</skipMachine>
+                    <dockerHost>tcp://localhost:2375</dockerHost>
+                    <verbose>true</verbose>
+                    <images>
+                        <image>
+                            <name>wildfly-ejb</name>
+                            <build>
+                                <dockerFileDir>${project.basedir}/src/main/resources/docker</dockerFileDir>
+                                <assembly>
+                                    <descriptorRef>artifact</descriptorRef>
+                                    <targetDir>/tmp</targetDir>
+                                    <user>jboss</user>
+                                </assembly>
+                            </build>
+                            <run>
+                                <ports>
+                                    <port>8080:8080</port>
+                                    <port>9990:9990</port>
+                                </ports>
+                            </run>
+                        </image>
+                    </images>
+                </configuration>
+            </plugin>
+            <!--  <plugin>
+                  <groupId>com.spotify</groupId>
+                  <artifactId>docker-maven-plugin</artifactId>
+                  <version>0.4.13</version>
+                  <configuration>
+                      <dockerDirectory>${project.basedir}/src/main/resources/docker</dockerDirectory>
+                      <imageName>intellij-wildfly-ejb</imageName>
+                      &lt;!&ndash; copy the service's jar file from target into the root directory of the image &ndash;&gt;
+                      <resources>
+                          <resource>
+                              <targetPath>/opt/jboss/wildfly/standalone/deployments</targetPath>
+                              <directory>${project.build.directory}</directory>
+                              <include>${project.build.finalName}.jar</include>
+                          </resource>
+                      </resources>
+                  </configuration>
+              </plugin>
+
+              <plugin>
+                  <artifactId>exec-maven-plugin</artifactId>
+                  <groupId>org.codehaus.mojo</groupId>
+                  <configuration>
+                      <executable>${project.basedir}/src/main/resources/docker/start-container.bat</executable>
+                  </configuration>
+              </plugin>-->
         </plugins>
     </build>
 </project>
