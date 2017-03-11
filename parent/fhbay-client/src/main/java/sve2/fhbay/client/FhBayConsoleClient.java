@@ -16,17 +16,26 @@ public class FhBayConsoleClient {
     private static void testSimpleCustomerAdmin() throws NamingException {
         String jndiName = "fhbay-beans/SimpleCustomerAdminRemoteBean!sve2.fhbay.interfaces.SimpleCustomerAdminRemote";
 
-        final Context ctx = new InitialContext();
-        SimpleCustomerAdminRemote remoteBean = (SimpleCustomerAdminRemote) ctx.lookup(jndiName);
+        Context ctx = null;
+        try {
+            ctx = new InitialContext();
+            SimpleCustomerAdminRemote remoteBean = (SimpleCustomerAdminRemote) ctx.lookup(jndiName);
 
-        final Customer customer1 = new Customer("Thomas", "Herzog", "cchet", "paswword", "thomas.herzog@fh-ooe.at");
-        final Customer customer2 = new Customer("Hugo", "Mayer", "hudo", "paswword", "hugo.mayer@fh-ooe.at");
+            final Customer customer1 = new Customer("Thomas", "Herzog", "cchet", "paswword", "thomas.herzog@fh-ooe.at");
+            final Customer customer2 = new Customer("Hugo", "Mayer", "hudo", "paswword", "hugo.mayer@fh-ooe.at");
 
-        final Long customerId1 = remoteBean.saveCustomer(customer1);
-        final Long customerId2 = remoteBean.saveCustomer(customer2);
+            final Long customerId1 = remoteBean.saveCustomer(customer1);
+            final Long customerId2 = remoteBean.saveCustomer(customer2);
 
-        System.out.println("Customer-id: " + customerId1);
-        System.out.println("Customer-id: " + customerId2);
+            System.out.println("Customer-id: " + customerId1);
+            System.out.println("Customer-id: " + customerId2);
+        } catch (Throwable e) {
+            e.printStackTrace();
+        }finally {
+            if(ctx != null){
+                ctx.close();
+            }
+        }
     }
 
     public static void main(String[] args) throws NamingException {

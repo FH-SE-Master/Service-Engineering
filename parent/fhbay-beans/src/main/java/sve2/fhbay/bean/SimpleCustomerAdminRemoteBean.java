@@ -14,7 +14,7 @@ import java.util.List;
  * @since 03/10/17
  */
 @Stateless
-//@Remote(SimpleCustomerAdminRemote.class)
+@Remote(SimpleCustomerAdminRemote.class)
 public class SimpleCustomerAdminRemoteBean implements SimpleCustomerAdminRemote {
 
     @EJB

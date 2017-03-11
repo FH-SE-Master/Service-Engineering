@@ -12,6 +12,10 @@
     <version>1.0.0</version>
     <packaging>ejb</packaging>
 
+    <properties>
+        <docker.buildArg.app>${project.build.finalName}.jar</docker.buildArg.app>
+    </properties>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -127,14 +131,15 @@
                     <skipMachine>true</skipMachine>
                     <dockerHost>tcp://localhost:2375</dockerHost>
                     <verbose>true</verbose>
+                    <showLogs>wildfly-ejb</showLogs>
                     <images>
                         <image>
                             <name>wildfly-ejb</name>
                             <build>
-                                <dockerFileDir>${project.basedir}/src/main/resources/docker</dockerFileDir>
+                                <dockerFileDir>${project.basedir}/src/main/docker</dockerFileDir>
                                 <assembly>
                                     <descriptorRef>artifact</descriptorRef>
-                                    <targetDir>/tmp</targetDir>
+                                    <!--<descriptor>${project.basedir}/src/main/docker/assembly.xml</descriptor>-->
                                     <user>jboss</user>
                                 </assembly>
                             </build>
