@@ -7,14 +7,16 @@ RUN mkdir ${JBOSS_HOME}/ide
 
 WORKDIR ${JBOSS_HOME}/ide
 
+RUN curl -o ./db-driver.jar https://jdbc.postgresql.org/download/postgresql-42.0.0.jar
+
 ADD start.sh start.sh
 ADD install-offline.cli install-offline.cli
 ADD init.sql init.sql
-ADD maven/app.war app.war
+ADD maven/web.war web.war
 
 RUN chmod +x start.sh
 RUN chown -R jboss:jboss ./*
-RUN mv app.war ../standalone/deployments/app.war
+RUN mv web.war ../standalone/deployments/web.war
 
 USER jboss
 

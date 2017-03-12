@@ -1,8 +1,0 @@
-# start embedded server for offline install
-embed-server --server-config=standalone-full.xml
-
-# install data source
-data-source add --name=FhBayDS --driver-name="h2" --connection-url="jdbc:h2:${env.JBOSS_HOME}/h2/FhBayDb;INIT=RUNSCRIPT FROM '${env.JBOSS_HOME}/init.sql';AUTO_SERVER=TRUE;DB_CLOSE_DELAY=-1" --jndi-name="java:jboss/datasources/FhBayDS" --user-name="sa" --password="sa" --enabled=true --use-java-context=true
-
-# install message queue
-jms-queue add --queue-address=FhBayQueue --entries=queue/FhBayQueue,java:jboss/exported/jms/queue/FhBayQueue
