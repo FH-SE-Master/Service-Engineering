@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>configuration</artifactId>
+        <groupId>at.fh.ooe.hagenberg.sve2.herzog.sso</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>deploy</artifactId>
+    <packaging>jar</packaging>
+
+    <dependencies>
+        <!-- This artifact will be hosted in the docker container -->
+        <dependency>
+            <groupId>${project.parent.groupId}</groupId>
+            <artifactId>web</artifactId>
+            <version>${project.parent.version}</version>
+            <scope>runtime</scope>
+            <type>war</type>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>io.fabric8</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>0.20.0</version>
+                <configuration>
+                    <skipMachine>true</skipMachine>
+                    <dockerHost>tcp://localhost:2375</dockerHost>
+                    <verbose>true</verbose>
+                    <showLogs>sso-wildfly-container</showLogs>
+                    <images>
+                        <image>
+                            <name>sso-wildfly-container</name>
+                            <build>
+                                <dockerFileDir>${project.basedir}/src/main/docker</dockerFileDir>
+                                <assembly>
+                                    <descriptor>${project.basedir}/src/main/docker/assembly.xml</descriptor>
+                                    <user>jboss</user>
+                                </assembly>
+                            </build>
+                            <run>
+                                <ports>
+                                    <port>8080:8080</port>
+                                    <port>9990:9990</port>
+                                </ports>
+                            </run>
+                        </image>
+                    </images>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
