@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# install datasource, queue
+${JBOSS_HOME}/bin/jboss-cli.sh --file=./install-offline.cli
 # create admin user
 ${JBOSS_HOME}/bin/add-user.sh -u admin -p admin --silent
 # create guest user
