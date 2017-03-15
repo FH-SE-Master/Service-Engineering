@@ -10,6 +10,7 @@
     <modules>
         <module>configuration</module>
         <module>web</module>
+        <module>service</module>
     </modules>
 
     <properties>
@@ -26,8 +27,13 @@
         <version.bom.jboss.spec>1.0.4.Final</version.bom.jboss.spec>
         <version.bom.jboss>10.1.1.Final</version.bom.jboss>
         <version.bom.resteasy>3.1.1.Final</version.bom.resteasy>
+        <version.bootsfaces>1.0.2</version.bootsfaces>
+        <version.primefaces>6.0</version.primefaces>
+        <version.omnifaces>2.6.1</version.omnifaces>
         <version.keycloak>2.5.4.Final</version.keycloak>
-        <version.slf4j>1.7.22</version.slf4j>
+        <version.fasterxml.jackson>2.6.7</version.fasterxml.jackson>
+        <version.resteasy.cdi>3.0.21.Final</version.resteasy.cdi>
+        <version.slf4j>1.7.24</version.slf4j>
         <version.logback>1.2.1</version.logback>
 
         <!-- Compiler properties -->
@@ -66,6 +72,13 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson</groupId>
+                <artifactId>jackson-bom</artifactId>
+                <version>${version.fasterxml.jackson}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
 
             <dependency>
                 <groupId>org.keycloak</groupId>
@@ -78,9 +91,35 @@
                 <version>${version.keycloak}</version>
             </dependency>
             <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${version.slf4j}</version>
+            </dependency>
+            <dependency>
                 <groupId>ch.qos.logback</groupId>
                 <artifactId>logback-classic</artifactId>
-                <version>${logback.version}</version>
+                <version>${version.logback}</version>
+            </dependency>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-core</artifactId>
+                <version>${version.logback}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>net.bootsfaces</groupId>
+                <artifactId>bootsfaces</artifactId>
+                <version>${version.bootsfaces}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.primefaces</groupId>
+                <artifactId>primefaces</artifactId>
+                <version>${version.primefaces}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.omnifaces</groupId>
+                <artifactId>omnifaces</artifactId>
+                <version>${version.omnifaces}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
