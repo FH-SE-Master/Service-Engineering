@@ -12,6 +12,10 @@
     <name>web</name>
     <packaging>war</packaging>
 
+    <properties>
+        <applicationServer>wildfly-1.10.0.Final</applicationServer>
+    </properties>
+
     <dependencies>
         <!-- Specs -->
         <dependency>
@@ -104,11 +108,13 @@
     </dependencies>
 
     <build>
+        <finalName>sso-rest-web</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
                 <configuration>
+                    <filteringDeploymentDescriptors>true</filteringDeploymentDescriptors>
                     <failOnMissingWebXml>true</failOnMissingWebXml>
                 </configuration>
             </plugin>

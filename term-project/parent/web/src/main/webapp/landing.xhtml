@@ -4,6 +4,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-    <h:outputText value="Landing"/>
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui">
+<ui:composition template="WEB-INF/templates/template.xhtml">
+    <ui:define name="title">SSO-REST-Home</ui:define>
+
+    <ui:define name="content">
+        <b:jumbotron id="landing_content">
+            This is the web app is for the application #{global_app_info.applicationName}.
+        </b:jumbotron>
+    </ui:define>
+</ui:composition>
 </html>

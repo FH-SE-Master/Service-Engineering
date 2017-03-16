@@ -4,6 +4,7 @@ import at.fh.ooe.hagenberg.sve2.herzog.sso.web.api.application.model.Application
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Produces;
+import javax.inject.Named;
 import java.time.LocalDateTime;
 
 import static at.fh.ooe.hagenberg.sve2.herzog.sso.web.api.application.listener.ServletContextInitializedListener.*;
@@ -17,11 +18,17 @@ public class ApplicationProducer {
 
     @Produces
     @ApplicationScoped
+    @Named("global_app_info")
     public ApplicationInfo produceApplicationInfo() {
         return new ApplicationInfo() {
             @Override
             public String getApplicationName() {
                 return APP_NAME;
+            }
+
+            @Override
+            public String getApplicationVersion() {
+                return APP_VERSION;
             }
 
             @Override

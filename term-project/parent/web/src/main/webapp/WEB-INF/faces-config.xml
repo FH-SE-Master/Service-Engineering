@@ -10,4 +10,10 @@
         </exception-handler-factory>
     </factory>
 
+    <application>
+        <resource-handler>
+            at.fh.ooe.hagenberg.sve2.herzog.sso.web.api.application.VersionedResourceHandler
+        </resource-handler>
+    </application>
+
 </faces-config>

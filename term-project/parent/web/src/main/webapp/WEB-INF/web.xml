@@ -49,19 +49,35 @@
         <param-name>javax.faces.CONFIG_FILES</param-name>
         <param-value/>
     </context-param>
+    <context-param>
+        <param-name>
+            javax.faces.WEBAPP_RESOURCES_DIRECTORY
+        </param-name>
+        <param-value>/WEB-INF/resources</param-value>
+    </context-param>
 
     <!-- Application parameters -->
     <context-param>
         <param-name>APP_NAME</param-name>
-        <param-value>Rest-Application</param-value>
+        <param-value>${project.build.finalName}</param-value>
+    </context-param>
+    <context-param>
+        <param-name>APP_VERSION</param-name>
+        <param-value>${project.parent.version}</param-value>
     </context-param>
     <context-param>
         <param-name>SERVER_NAME</param-name>
-        <param-value>Wildfly-1.10.0.Final</param-value>
+        <param-value>${applicationServer}</param-value>
     </context-param>
     <context-param>
         <param-name>INFO_URI</param-name>
         <param-value>landing.xhtml</param-value>
+    </context-param>
+
+    <!-- JSF lib context params -->
+    <context-param>
+        <param-name>BootsFaces_THEME</param-name>
+        <param-value>cerulean</param-value>
     </context-param>
 
     <!-- Servlets -->
@@ -74,7 +90,6 @@
     <servlet-mapping>
         <servlet-name>Faces Servlet</servlet-name>
         <url-pattern>*.xhtml</url-pattern>
-        <url-pattern>/javax.faces.resource/*</url-pattern>
     </servlet-mapping>
 
     <!-- Filters -->
@@ -128,4 +143,9 @@
     <error-page>
         <location>/error/500.xhtml</location>
     </error-page>
+
+    <!-- Session config -->
+    <session-config>
+        <session-timeout>60</session-timeout>
+    </session-config>
 </web-app>

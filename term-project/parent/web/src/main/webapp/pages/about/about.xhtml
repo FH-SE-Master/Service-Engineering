@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui">
+<ui:composition template="/WEB-INF/templates/template.xhtml">
+    <ui:define name="title">About</ui:define>
+
+    <ui:define name="content">
+        <b:jumbotron>
+            <h1>About the Application</h1>
+            <b:row>
+                <b:column colMd="2">
+                    <h:outputLabel id="app_name_label" for="app_name" value="Name"/>
+                </b:column>
+                <b:column colMd="10">
+                    <h:outputText id="app_name" value="#{global_app_info.applicationName}"/>
+                </b:column>
+            </b:row>
+            <b:row>
+                <b:column colMd="2">
+                    <h:outputLabel id="app_version_label" for="app_version" value="Version"/>
+                </b:column>
+                <b:column colMd="10">
+                    <h:outputText id="app_version" value="#{global_app_info.applicationVersion}"/>
+                </b:column>
+            </b:row>
+            <b:row>
+                <b:column colMd="2">
+                    <h:outputLabel id="app_rest_version_label" for="app_rest_version" value="REST Version"/>
+                </b:column>
+                <b:column colMd="10">
+                    <h:outputText id="app_rest_version" value="#{global_app_info.restApiVersion}"/>
+                </b:column>
+            </b:row>
+        </b:jumbotron>
+    </ui:define>
+</ui:composition>
+</html>

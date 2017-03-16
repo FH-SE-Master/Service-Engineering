@@ -12,6 +12,8 @@ public interface ApplicationInfo extends Serializable {
 
     String getApplicationName();
 
+    String getApplicationVersion();
+
     String getRestApiVersion();
 
     String getServerName();

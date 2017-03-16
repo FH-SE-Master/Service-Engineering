@@ -15,6 +15,7 @@ import java.time.LocalDateTime;
 public class ServletContextInitializedListener implements ServletContextListener {
 
     public static String APP_NAME;
+    public static String APP_VERSION;
     public static String REST_API_VERSION;
     public static String SERVER_NAME;
     public static String INFO_URI;
@@ -24,6 +25,7 @@ public class ServletContextInitializedListener implements ServletContextListener
     public void contextInitialized(ServletContextEvent sce) {
         STARTED_AT = LocalDateTime.now();
         APP_NAME = sce.getServletContext().getInitParameter("APP_NAME");
+        APP_VERSION = sce.getServletContext().getInitParameter("APP_VERSION");
         SERVER_NAME = sce.getServletContext().getInitParameter("SERVER_NAME");
         INFO_URI = sce.getServletContext().getInitParameter("INFO_URI");
         REST_API_VERSION = RestApiInfo.API_VERSION;
