@@ -11,29 +11,51 @@
 
     <ui:define name="content">
         <b:jumbotron>
-            <h1>About the Application</h1>
             <b:row>
-                <b:column colMd="2">
-                    <h:outputLabel id="app_name_label" for="app_name" value="Name"/>
+                <b:column colMd="12">
+                    <h1>About the Application</h1>
                 </b:column>
-                <b:column colMd="10">
+            </b:row>
+            <b:row>
+                <b:column colMd="4">
+                    <h:outputLabel id="app_name_label" for="app_name" value="Application name"/>
+                </b:column>
+                <b:column colMd="8">
                     <h:outputText id="app_name" value="#{global_app_info.applicationName}"/>
                 </b:column>
             </b:row>
             <b:row>
-                <b:column colMd="2">
-                    <h:outputLabel id="app_version_label" for="app_version" value="Version"/>
+                <b:column colMd="4">
+                    <h:outputLabel id="app_version_label" for="app_version" value="Application version"/>
                 </b:column>
-                <b:column colMd="10">
+                <b:column colMd="8">
                     <h:outputText id="app_version" value="#{global_app_info.applicationVersion}"/>
                 </b:column>
             </b:row>
             <b:row>
-                <b:column colMd="2">
-                    <h:outputLabel id="app_rest_version_label" for="app_rest_version" value="REST Version"/>
+                <b:column colMd="4">
+                    <h:outputLabel id="app_rest_version_label" for="app_rest_version" value="REST-API Version"/>
                 </b:column>
-                <b:column colMd="10">
+                <b:column colMd="8">
                     <h:outputText id="app_rest_version" value="#{global_app_info.restApiVersion}"/>
+                </b:column>
+            </b:row>
+            <b:row>
+                <b:column colMd="4">
+                    <h:outputLabel id="server_name_label" for="server_name" value="Server name"/>
+                </b:column>
+                <b:column colMd="8">
+                    <h:outputText id="server_name" value="#{global_app_info.serverName}"/>
+                </b:column>
+            </b:row>
+            <b:row>
+                <b:column colMd="4">
+                    <h:outputLabel id="alive_since_label" for="alive_since" value="Server alive since"/>
+                </b:column>
+                <b:column colMd="8">
+                    <h:outputText id="alive_since" value="#{global_app_info.aliveSinceAsDate}">
+                        <f:convertDateTime dateStyle="medium" timeStyle="medium" type="both"/>
+                    </h:outputText>
                 </b:column>
             </b:row>
         </b:jumbotron>

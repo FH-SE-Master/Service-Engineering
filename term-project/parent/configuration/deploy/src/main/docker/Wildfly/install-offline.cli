@@ -9,3 +9,6 @@ module add --name=org.postgresql --resources=./db-driver.jar --dependencies=java
 
 # install datasource
 /subsystem=datasources/data-source="PostgresDataSource":add(jta="true",use-ccm="false",use-java-context="true",enabled="true",jndi-name=java:/jdbc/PostgresDataSource,max-pool-size=10,min-pool-size=5,flush-strategy="FailingConnectionOnly",driver-name=postgresql,connection-url=jdbc:postgresql://${env.POSTGRES_PORT_5432_TCP_ADDR}:${env.POSTGRES_PORT_5432_TCP_PORT}/${env.POSTGRES_DATABASE},user-name="${env.POSTGRES_USER}",password="${env.POSTGRES_PASSWORD}")
+
+# install myfaces
+deploy wildfly-jsf-installer.cli

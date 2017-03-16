@@ -7,11 +7,15 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:b="http://bootsfaces.net/ui">
 <ui:composition template="/WEB-INF/templates/template.xhtml">
-    <ui:define name="title">SSO-REST-Home</ui:define>
+    <ui:define name="title">REST API</ui:define>
 
     <ui:define name="content">
-        <b:jumbotron id="landing_content">
-            This is the web app is for the application #{global_app_info.applicationName}.
+        <b:jumbotron>
+            <b:row>
+                <b:column colMd="12">
+                    #{restPage}
+                </b:column>
+            </b:row>
         </b:jumbotron>
     </ui:define>
 </ui:composition>

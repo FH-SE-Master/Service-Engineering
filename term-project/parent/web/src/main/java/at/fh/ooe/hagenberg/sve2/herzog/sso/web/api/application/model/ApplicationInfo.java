@@ -3,6 +3,7 @@ package at.fh.ooe.hagenberg.sve2.herzog.sso.web.api.application.model;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Calendar;
+import java.util.Date;
 
 /**
  * @author Thomas Herzog <t.herzog@curecomp.com>
@@ -21,4 +22,8 @@ public interface ApplicationInfo extends Serializable {
     String getInfoUri();
 
     LocalDateTime getAliveSince();
+
+    Date getAliveSinceAsDate();
+
+    boolean isDevelopment();
 }

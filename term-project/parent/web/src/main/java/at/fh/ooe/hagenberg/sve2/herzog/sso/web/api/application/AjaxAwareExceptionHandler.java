@@ -44,6 +44,7 @@ public class AjaxAwareExceptionHandler extends FullAjaxExceptionHandler {
             ExceptionQueuedEventContext exceptionContext = (ExceptionQueuedEventContext) unhandledExceptionQueuedEvents.next().getSource();
             final String viewId = (context.getViewRoot() != null) ? context.getViewRoot().getViewId() : "unknown";
             logException(context, exceptionContext.getException(), ERROR_LOCATION, "Error on GET request for view: " + viewId);
+
             try {
                 final HttpServletRequest request = (HttpServletRequest) context.getExternalContext().getRequest();
                 context.getExternalContext().redirect(request.getContextPath() + ERROR_LOCATION);

@@ -12,6 +12,7 @@ RUN curl -o ./db-driver.jar https://jdbc.postgresql.org/download/postgresql-42.0
 ADD start.sh start.sh
 ADD install-offline.cli install-offline.cli
 ADD init.sql init.sql
+ADD wildfly-jsf-installer-10.1.0.Final.cli wildfly-jsf-installer.cli
 ADD maven/web.war web.war
 
 RUN chmod +x start.sh

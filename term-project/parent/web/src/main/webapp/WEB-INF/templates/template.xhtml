@@ -7,16 +7,15 @@
       xmlns:b="http://bootsfaces.net/ui"
       xmlns:p="http://primefaces.org/ui">
 <h:head>
-    <title>Rest SSO</title>
     <meta name="author" content="Thomas Herzog"/>
     <title><ui:insert name="title"/></title>
 </h:head>
 <h:body style="padding: 60px;">
     <b:navBar id="nav_bar" brand="Rest SSO" brandHref="#" fixed="top" inverse="true">
         <b:navbarLinks id="nav_bar_links">
-            <b:navLink id="nav_bar_link_home" value="Home" href="#{request.contextPath}/landing.xhtml"/>
-            <b:navLink id="nav_bar_link_rest_api" value="REST API" href="#"/>
-            <b:navLink id="nav_bar_link_about" value="About" href="#{request.contextPath}/pages/about/about.xhtml"/>
+            <b:navLink id="nav_bar_link_home" value="Home" outcome="#{global_nav_rules.toLanding}"/>
+            <b:navLink id="nav_bar_link_rest_api" value="REST API" outcome="/pages/rest/rest.xhtml"/>
+            <b:navLink id="nav_bar_link_about" value="About" outcome="/pages/about/about.xhtml"/>
         </b:navbarLinks>
     </b:navBar>
 
@@ -29,7 +28,7 @@
     </h:panelGroup>
 
     <!-- Idle management -->
-    <p:idleMonitor rendered="#{not facesContext.viewRoot.id.toLowerCase().contains('landing.xhtml')}" timeout="#{session.maxInactiveInterval * 60 * 1000}">
+    <p:idleMonitor timeout="#{session.maxInactiveInterval * 60 * 1000}">
         <p:ajax event="idle" listener="#{securityBean.onLogout()}" process="@this" oncomplete="window.top.location = '#{request.contextPath}/landing.xhtml'"/>
     </p:idleMonitor>
 

@@ -22,13 +22,11 @@ import java.util.List;
 public class VersionedResourceHandler extends DefaultResourceHandler {
 
     private final ApplicationInfo info;
-    private final boolean developmentMode;
 
     private final List<String> APP_LIBRARIES = Arrays.asList("css", "js");
 
     public VersionedResourceHandler(ResourceHandler wrapped) {
         super(wrapped);
-        developmentMode = FacesContext.getCurrentInstance().isProjectStage(ProjectStage.Development);
         info = BeanProvider.getContextualReference(ApplicationInfo.class);
     }
 
@@ -39,7 +37,7 @@ public class VersionedResourceHandler extends DefaultResourceHandler {
         }
 
         final String requestPath;
-        if (developmentMode) {
+        if (info.isDevelopment()) {
             requestPath = resource.getRequestPath() + "&v=" + info.getAliveSince().format(DateTimeFormatter.ISO_DATE_TIME);
         } else {
             requestPath = resource.getRequestPath() + "&v=" + info.getApplicationVersion();

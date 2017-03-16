@@ -1,7 +1,8 @@
-package at.fh.ooe.hagenberg.sve2.herzog.sso.web.api.application.listener;
+package at.fh.ooe.hagenberg.sve2.herzog.sso.web.api.application;
 
 import at.fh.ooe.hagenberg.sve2.herzog.sso.service.rest.api.RestApiInfo;
 
+import javax.faces.application.ProjectStage;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
@@ -14,12 +15,13 @@ import java.time.LocalDateTime;
 @WebListener("servletContextInitializedListener")
 public class ServletContextInitializedListener implements ServletContextListener {
 
-    public static String APP_NAME;
-    public static String APP_VERSION;
-    public static String REST_API_VERSION;
-    public static String SERVER_NAME;
-    public static String INFO_URI;
-    public static LocalDateTime STARTED_AT;
+    static String APP_NAME;
+    static String APP_VERSION;
+    static String REST_API_VERSION;
+    static String SERVER_NAME;
+    static String INFO_URI;
+    static LocalDateTime STARTED_AT;
+    static ProjectStage PROJECT_STAGE;
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {
@@ -28,11 +30,12 @@ public class ServletContextInitializedListener implements ServletContextListener
         APP_VERSION = sce.getServletContext().getInitParameter("APP_VERSION");
         SERVER_NAME = sce.getServletContext().getInitParameter("SERVER_NAME");
         INFO_URI = sce.getServletContext().getInitParameter("INFO_URI");
+        PROJECT_STAGE = ProjectStage.valueOf(sce.getServletContext().getInitParameter("javax.faces.PROJECT_STAGE"));
         REST_API_VERSION = RestApiInfo.API_VERSION;
     }
 
     @Override
     public void contextDestroyed(ServletContextEvent sce) {
-
+        // Nothing to do
     }
 }

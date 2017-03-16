@@ -138,7 +138,7 @@
     </error-page>
     <error-page>
         <error-code>404</error-code>
-        <location>/error/403.xhtml</location>
+        <location>/error/404.xhtml</location>
     </error-page>
     <error-page>
         <location>/error/500.xhtml</location>
