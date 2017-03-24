@@ -1,0 +1,58 @@
+version: "2.1"
+services:
+   intellij-sve-postgres:
+        container_name: intellij-sve-postgres
+        image: postgres:latest
+        environment:
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+            - POSTGRES_ROOT_PASSWORD=${POSTGRES_PASSWORD}
+            - POSTGRES_DATABASE=postgres
+        mem_limit: 512m
+        cpu_shares: 2
+   intellij-sve-keycloak:
+        container_name: intellij-sve-keycloak
+        image: intellij-sve-keycloak
+        build:
+            context: ./Keycloak
+            args:
+                - KEYCLOAK_VERSION=2.5.4.Final
+                - POSTGRES_DRIVER_VERSION=9.3-1102-jdbc3
+        mem_limit: 512m
+        cpu_shares: 2
+        depends_on:
+            - intellij-sve-postgres
+        ports:
+            - "8081:8080"
+        environment:
+            - KEYCLOAK_USER=admin
+            - KEYCLOAK_PASSWORD=${KEYCLOAK_PASSWORD}
+            - POSTGRES_DATABASE=postgres
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+            - POSTGRES_PORT_5432_TCP_ADDR=intellij-sve-postgres
+            - POSTGRES_PORT_5432_TCP_PORT=5432
+            - KEYCLOAK_LOGLEVEL=DEBUG
+   intellij-sve-wildfly:
+        container_name: intellij-sve-wildfly
+        image: intellij-sve-wildfly
+        build:
+            context: ./Wildfly
+        mem_limit: 512m
+        cpu_shares: 4
+        depends_on:
+            - intellij-sve-postgres
+            - intellij-sve-keycloak
+        ports:
+            - "8080:8080"
+            - "9990:9990"
+        volumes:
+            - ../deployments:/opt/jboss/wildfly/standalone/deployments:rw
+        environment:
+            - WILDFLY_USER=admin
+            - WILDFLY_PASSWORD=${KEYCLOAK_PASSWORD}
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+            - POSTGRES_DATABASE=postgres
+            - POSTGRES_PORT_5432_TCP_ADDR=intellij-sve-postgres
+            - POSTGRES_PORT_5432_TCP_PORT=5432

@@ -102,7 +102,7 @@
         <!-- Application modules -->
         <dependency>
             <groupId>at.fh.ooe.hagenberg.sve2.herzog.sso</groupId>
-            <artifactId>service-rest-api</artifactId>
+            <artifactId>service-rest-impl</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
     </dependencies>
@@ -116,6 +116,7 @@
                 <configuration>
                     <filteringDeploymentDescriptors>true</filteringDeploymentDescriptors>
                     <failOnMissingWebXml>true</failOnMissingWebXml>
+                    <outputDirectory>${project.basedir}/src/main/docker/deployments</outputDirectory>
                 </configuration>
             </plugin>
         </plugins>

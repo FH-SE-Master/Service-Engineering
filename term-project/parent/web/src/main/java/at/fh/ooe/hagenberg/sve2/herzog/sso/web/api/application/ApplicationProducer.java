@@ -1,6 +1,6 @@
 package at.fh.ooe.hagenberg.sve2.herzog.sso.web.api.application;
 
-import at.fh.ooe.hagenberg.sve2.herzog.sso.web.api.application.model.ApplicationInfo;
+import at.fh.ooe.hagenberg.sve2.herzog.sso.service.rest.api.model.ApplicationInfo;
 import at.fh.ooe.hagenberg.sve2.herzog.sso.web.api.application.model.NavigationRules;
 
 import javax.enterprise.context.ApplicationScoped;

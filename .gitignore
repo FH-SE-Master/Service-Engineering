@@ -19,3 +19,5 @@ Thumbs.db
 */**/*.js.map
 */**/*.d.ts
 !*/**/resources/ts/typings/**/*.d.ts
+node_modules
+deployments

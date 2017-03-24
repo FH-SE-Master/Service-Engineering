@@ -8,7 +8,6 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>configuration</module>
         <module>web</module>
         <module>service</module>
     </modules>

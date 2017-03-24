@@ -1,14 +1,14 @@
-package at.fh.ooe.hagenberg.sve2.herzog.sso.web.impl.rest;
+package at.fh.ooe.hagenberg.sve2.herzog.sso.service.rest.impl;
 
 import at.fh.ooe.hagenberg.sve2.herzog.sso.service.rest.api.ApplicationRestService;
+import at.fh.ooe.hagenberg.sve2.herzog.sso.service.rest.api.model.ApplicationInfo;
 import at.fh.ooe.hagenberg.sve2.herzog.sso.service.rest.api.model.json.AliveModel;
-import at.fh.ooe.hagenberg.sve2.herzog.sso.web.api.application.model.ApplicationInfo;
-import org.apache.deltaspike.core.api.common.DeltaSpike;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.Path;
+import javax.ws.rs.core.Context;
 
 /**
  * @author Thomas Herzog <t.herzog@curecomp.com>
@@ -22,7 +22,7 @@ public class ApplicationRestServiceImpl implements ApplicationRestService {
     private ApplicationInfo appInfo;
 
     @Inject
-    @DeltaSpike
+    @Context
     private HttpServletRequest request;
 
     @Override

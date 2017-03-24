@@ -1,4 +1,4 @@
-package at.fh.ooe.hagenberg.sve2.herzog.sso.web.api.application.model;
+package at.fh.ooe.hagenberg.sve2.herzog.sso.service.rest.api.model;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;

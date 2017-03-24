@@ -1,5 +1,5 @@
 # start embedded server for offline install
-embed-server --server-config=standalone-full.xml
+embed-server --server-config=standalone.xml
 
 # install postgres driver module
 module add --name=org.postgresql --resources=./db-driver.jar --dependencies=javax.api,javax.transaction.api
@@ -12,3 +12,5 @@ module add --name=org.postgresql --resources=./db-driver.jar --dependencies=java
 
 # install myfaces
 deploy wildfly-jsf-installer.cli
+
+stop-embedded-server
