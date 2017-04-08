@@ -1,9 +1,0 @@
-{
-  "realm": "master",
-  "auth-server-url": "http://surface:8080/auth",
-  "ssl-required": "none",
-  "resource": "sso-wildfly-app",
-  "public-client": true,
-  "use-resource-role-mappings": true,
-  "disable-trust-manager": true
-}

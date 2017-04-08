@@ -1,0 +1,127 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<!-- deploy to wildfly: mvn package wildfly:deploy -->
+	<!-- deploy to wildfly and generate client jar: mvn package wildfly:deploy 
+		install -->
+	<!-- run client: mvn -pl fhbay-client exec:java -->
+
+	<groupId>sve2.ejb</groupId>
+	<artifactId>fhbay</artifactId>
+	<version>1.0.0</version>
+	<packaging>pom</packaging>
+
+	<properties>
+		<wildfly.maven.plugin.version>1.1.0.Final</wildfly.maven.plugin.version>
+		<jboss.bom.version>10.1.1.Final</jboss.bom.version>
+		<ear.plugin.version>2.10.1</ear.plugin.version>
+		<ejb.plugin.version>2.5.1</ejb.plugin.version>
+		<war.plugin.version>3.0.0</war.plugin.version>
+		<slf4j.version>1.7.22</slf4j.version>
+
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<modules>
+		<module>fhbay-beans</module>
+		<module>fhbay-web</module>
+		<module>fhbay-ear</module>
+		<module>fhbay-client</module>
+	</modules>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>sve2.ejb</groupId>
+				<artifactId>fhbay-beans</artifactId>
+				<version>1.0.0</version>
+				<type>ejb</type>
+			</dependency>
+
+			<dependency>
+				<groupId>sve2.ejb</groupId>
+				<artifactId>fhbay-web</artifactId>
+				<version>1.0.0</version>
+				<type>war</type>
+				<!-- <scope>compile</scope> -->
+			</dependency>
+
+			<!-- Define the version of JBoss' Java EE 7 APIs we want to use -->
+			<!-- JBoss distributes a complete set of Java EE 7 APIs including a Bill 
+				of Materials (BOM). A BOM specifies the versions of a "stack" (or a collection) 
+				of artifacts. We use this here so that we always get the correct versions 
+				of artifacts. Here we use the jboss-javaee-7.0 stack (you can read this as 
+				the JBoss stack of the Java EE 7 APIs). You can actually use this stack with 
+				any version of WildFly that implements Java EE 7, not just WildFly 8! -->
+			<dependency>
+				<groupId>org.wildfly.bom</groupId>
+				<artifactId>wildfly-javaee7-with-tools</artifactId>
+				<version>${jboss.bom.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-ejb-plugin</artifactId>
+					<version>${ejb.plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.wildfly.plugins</groupId>
+					<artifactId>wildfly-maven-plugin</artifactId>
+					<version>${wildfly.maven.plugin.version}</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		
+		<plugins>
+			<plugin>
+				<groupId>org.wildfly.plugins</groupId>
+				<artifactId>wildfly-maven-plugin</artifactId>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<repositories>
+		<repository>
+			<id>jboss-public-repository-group</id>
+			<name>JBoss Public Repository Group</name>
+			<url>http://repository.jboss.org/nexus/content/groups/public/</url>
+			<layout>default</layout>
+			<releases>
+				<enabled>true</enabled>
+				<updatePolicy>never</updatePolicy>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>never</updatePolicy>
+			</snapshots>
+		</repository>
+	</repositories>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>jboss-public-repository-group</id>
+			<name>JBoss Public Repository Group</name>
+			<url>http://repository.jboss.org/nexus/content/groups/public/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
+
+</project>
