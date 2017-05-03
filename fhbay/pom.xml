@@ -19,6 +19,7 @@
 		<ejb.plugin.version>2.5.1</ejb.plugin.version>
 		<war.plugin.version>3.0.0</war.plugin.version>
 		<slf4j.version>1.7.22</slf4j.version>
+		<lombok.version>1.16.16</lombok.version>
 
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.source>1.8</maven.compiler.source>
@@ -62,6 +63,13 @@
 				<version>${jboss.bom.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok</artifactId>
+				<version>${lombok.version}</version>
+				<scope>provided</scope>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>

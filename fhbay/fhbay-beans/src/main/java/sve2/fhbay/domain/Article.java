@@ -1,55 +1,90 @@
 package sve2.fhbay.domain;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+import lombok.experimental.Accessors;
+
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 @Entity
 @Table(name = "ARTICLE")
+@NoArgsConstructor
+@ToString(doNotUseGetters = true, exclude = {"bids"})
 public class Article implements Serializable, Comparable<Article> {
 
     private static final long serialVersionUID = -1L;
 
     @Id
     @GeneratedValue
+    @Getter
+    @Setter
     private Long id;
+
     @Column(nullable = false)
+    @Getter
+    @Setter
     private String name;
 
     @Column(nullable = false)
+    @Getter
+    @Setter
     private String description;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "SELLER_CUSTOMER_ID")
+    @Getter
+    @Setter
     private Customer seller;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "BUYER_CUSTOMER_ID")
+    @Getter
+    @Setter
     private Customer buyer;
 
     @Column(nullable = false)
-    private double initialPrice;
+    @Getter
+    @Setter
+    private Double initialPrice;
 
-    @Column(nullable = false)
-    private double finalPrice;
+    @Column
+    @Getter
+    @Setter
+    private Double finalPrice;
 
     @Column(nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
+    @Getter
+    @Setter
     private Date startDate;
 
     @Column(nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
+    @Getter
+    @Setter
     private Date endDate;
 
     @Enumerated(EnumType.STRING)
+    @Getter
+    @Setter
     private ArticleState state = ArticleState.OFFERED;
 
-    public Article() {
-    }
+//    @OneToMany(mappedBy = "article", fetch = FetchType.LAZY)
+//    @OrderBy("fromDate, toDate, id ASC")
+//    @Getter
+//    @Setter
+//    private SortedSet<Bid> bids = new TreeSet<>();
 
     public Article(String name,
                    String description,
-                   double initialPrice,
+                   Double initialPrice,
                    Date startDate,
                    Date endDate) {
         this.name = name;
@@ -59,93 +94,13 @@ public class Article implements Serializable, Comparable<Article> {
         this.endDate = endDate;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Customer getSeller() {
-        return seller;
-    }
-
-    public void setSeller(Customer seller) {
-        this.seller = seller;
-    }
-
-    public Customer getBuyer() {
-        return buyer;
-    }
-
-    public void setBuyer(Customer buyer) {
-        this.buyer = buyer;
-    }
-
-    public double getInitialPrice() {
-        return initialPrice;
-    }
-
-    public void setInitialPrice(double initialPrice) {
-        this.initialPrice = initialPrice;
-    }
-
-    public double getFinalPrice() {
-        return finalPrice;
-    }
-
-    public void setFinalPrice(double finalPrice) {
-        this.finalPrice = finalPrice;
-    }
-
-    public Date getStartDate() {
-        return startDate;
-    }
-
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
-    }
-
-    public Date getEndDate() {
-        return endDate;
-    }
-
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
-    }
-
-    public ArticleState getState() {
-        return state;
-    }
-
-    public void setState(ArticleState state) {
-        this.state = state;
-    }
-
-    public String toString() {
-        return String.format("Article (%d): name=%s, articleState=%s, initialPrice=%.2f, finalPrice=%.2f", getId(),
-                             getName(), getState().toString(), getInitialPrice(), getFinalPrice());
-    }
-
     @Override
     public int compareTo(Article otherArticle) {
-        return this.getId().compareTo(otherArticle.getId());
+        int result;
+        if ((result = getStartDate().compareTo(otherArticle.getStartDate())) == 0) {
+            result = this.getId().compareTo(otherArticle.getId());
+        }
+
+        return result;
     }
 }

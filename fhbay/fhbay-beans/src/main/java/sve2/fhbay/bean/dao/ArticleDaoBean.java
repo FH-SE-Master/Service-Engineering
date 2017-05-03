@@ -22,21 +22,8 @@ public class ArticleDaoBean extends BaseDaoBean<Article, Long> implements Articl
     public List<Article> findByPatternAndCategory(String pattern,
                                                   Long categoryId) {
         // Version 1: JPQL
-        //        final String queryStr = "SELECT a FROM Article a WHERE lower(a.name) like lower(:pattern) OR lower(a.description) like lower(:pattern)";
-        //
-        //        return getEm().createQuery(queryStr, Article.class).setParameter("pattern", "%" + pattern + "%").getResultList();
+        final String queryStr = "SELECT a FROM Article a WHERE lower(a.name) like lower(:pattern) OR lower(a.description) like lower(:pattern)";
 
-        // Version 2: Crtieria API
-        final CriteriaBuilder cb = getEm().getCriteriaBuilder();
-        final CriteriaQuery<Article> cq = cb.createQuery(Article.class);
-
-        Root<Article> root = cq.from(Article.class);
-        ParameterExpression<String> pe = cb.parameter(String.class);
-
-        final CriteriaQuery<Article> query = cq.select(root)
-                                               .where(cb.or(cb.like(cb.lower(root.get(Article_.name)), pe),
-                                                            cb.like(cb.lower(root.get(Article_.description)), pe)));
-
-        return getEm().createQuery(query).setParameter(pe, "%" + pattern + "%").getResultList();
+        return getEm().createQuery(queryStr, Article.class).setParameter("pattern", "%" + pattern + "%").getResultList();
     }
 }

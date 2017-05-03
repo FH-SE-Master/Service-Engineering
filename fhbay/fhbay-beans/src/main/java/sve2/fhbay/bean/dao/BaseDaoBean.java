@@ -40,6 +40,12 @@ public abstract class BaseDaoBean<T, I extends Serializable> implements BaseDao<
         return em.createQuery(String.format("SELECT e FROM %s e", entityClass.getSimpleName()), entityClass).getResultList();
     }
 
+
+    @Override
+    public void deleteAll() {
+        findAll().forEach(em::remove);
+    }
+
     protected EntityManager getEm() {
         return em;
     }

@@ -12,4 +12,8 @@ import javax.ejb.Local;
 public interface AuctionLocal extends Auction {
 
     void addFinishAuctionTimer(Article article);
+
+    void removeAuctionTimer(Long articleId);
+
+    void onAuctionFinished(long articleId);
 }

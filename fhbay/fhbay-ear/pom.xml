@@ -45,6 +45,7 @@
 						</webModule>
 					</modules>
 					<fileNameMapping>no-version</fileNameMapping>
+					<!--<outputDirectory>${pom.basedir}/../docker/deployments</outputDirectory>-->
 				</configuration>
 			</plugin>
 

@@ -6,6 +6,8 @@ import sve2.fhbay.util.JdbcUtil;
 
 import javax.ejb.EJBException;
 import javax.ejb.Stateless;
+import javax.ejb.TransactionAttribute;
+import javax.ejb.TransactionAttributeType;
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.PreparedStatement;

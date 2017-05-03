@@ -1,11 +1,13 @@
 package sve2.fhbay.client;
 
+import org.apache.activemq.artemis.jms.client.ActiveMQConnectionFactory;
 import org.apache.activemq.artemis.jms.client.ActiveMQMapMessage;
 import sve2.fhbay.domain.Article;
 import sve2.fhbay.domain.Customer;
 import sve2.fhbay.exceptions.IdNotFoundException;
 import sve2.fhbay.interfaces.ArticleAdminRemote;
 import sve2.fhbay.interfaces.CustomerAdmin;
+import sve2.fhbay.util.DateUtil;
 
 import javax.jms.*;
 import javax.naming.Context;
@@ -13,6 +15,7 @@ import javax.naming.NamingException;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author Thomas Herzog <t.herzog@curecomp.com>
@@ -95,7 +98,7 @@ public class FhBayConsoleClient {
         try {
             Date now = DateUtil.now();
             Article art1 =
-                    new Article("DDR2 ECC", "Neuwertiger Speicherbaustein", 100, now,
+                    new Article("DDR2 ECC", "Neuwertiger Speicherbaustein", 100.0, now,
                                 DateUtil.addSeconds(now, 3));
             Long art1Id = articleAdmin.offerArticle(art1, cust1Id);
 
@@ -152,6 +155,13 @@ public class FhBayConsoleClient {
 
         Queue queue = JndiUtil.getRemoteObject(QUEUE_REMOTE_NAME);
         ConnectionFactory factory = JndiUtil.getRemoteObject(QUEUE_CONNECTION_FACTORY_REMOTE_NAME);
+        // Hack for checking if host is properly set on a localhost environment which it isn't when wildfly is hosted in a docker container
+        if (ActiveMQConnectionFactory.class.isAssignableFrom(factory.getClass())) {
+            final Map<String, Object> params = ((ActiveMQConnectionFactory) factory).getServerLocator().getStaticTransportConfigurations()[0].getParams();
+            if (!"localhost".equalsIgnoreCase((String)params.get("host"))) {
+                ((ActiveMQConnectionFactory) factory).getServerLocator().getStaticTransportConfigurations()[0].getParams().put("host", "localhost");
+            }
+        }
 
         try (JMSContext jmsCtx = factory.createContext(username, password)) {
             JMSProducer producer = jmsCtx.createProducer();

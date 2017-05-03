@@ -4,6 +4,8 @@ import sve2.fhbay.dao.CustomerDao;
 import sve2.fhbay.domain.Customer;
 
 import javax.ejb.Stateless;
+import javax.ejb.TransactionAttribute;
+import javax.ejb.TransactionAttributeType;
 
 /**
  * @author Thomas Herzog <t.herzog@curecomp.com>
