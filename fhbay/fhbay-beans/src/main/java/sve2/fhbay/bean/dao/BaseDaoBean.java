@@ -32,14 +32,13 @@ public abstract class BaseDaoBean<T, I extends Serializable> implements BaseDao<
         em.merge(entity);
     }
 
-    public T findById(Long id) {
+    public T findById(I id) {
         return em.find(entityClass, id);
     }
 
     public List<T> findAll() {
         return em.createQuery(String.format("SELECT e FROM %s e", entityClass.getSimpleName()), entityClass).getResultList();
     }
-
 
     @Override
     public void deleteAll() {
