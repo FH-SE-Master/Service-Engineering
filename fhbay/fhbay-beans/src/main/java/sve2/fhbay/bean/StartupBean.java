@@ -1,5 +1,6 @@
 package sve2.fhbay.bean;
 
+import org.slf4j.Logger;
 import sve2.fhbay.dao.CustomerDao;
 import sve2.fhbay.domain.Article;
 import sve2.fhbay.domain.Customer;
@@ -25,6 +26,8 @@ public class StartupBean {
     private ArticleAdminLocal articleAdmin;
     @EJB
     private AuctionLocal auctionBean;
+
+    private Logger log;
 
     @PostConstruct
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
