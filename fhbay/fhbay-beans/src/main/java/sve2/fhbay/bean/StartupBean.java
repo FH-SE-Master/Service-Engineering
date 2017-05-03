@@ -1,7 +1,5 @@
 package sve2.fhbay.bean;
 
-import sve2.fhbay.dao.ArticleDao;
-import sve2.fhbay.dao.BidDao;
 import sve2.fhbay.dao.CustomerDao;
 import sve2.fhbay.domain.Article;
 import sve2.fhbay.domain.Customer;
@@ -24,10 +22,6 @@ public class StartupBean {
     @EJB
     private CustomerDao customerDao;
     @EJB
-    private ArticleDao articleDao;
-    @EJB
-    private BidDao bidDao;
-    @EJB
     private ArticleAdminLocal articleAdmin;
     @EJB
     private AuctionLocal auctionBean;
@@ -35,11 +29,6 @@ public class StartupBean {
     @PostConstruct
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
     public void onStartup() throws Throwable {
-        // Called twice in IDE
-        if (!customerDao.findAll().isEmpty()) {
-            return;
-        }
-
         Customer cust1 = new Customer("Armin", "Kogler", "akogler", "kogi", "akogler@gmx.at");
         Customer cust2 = new Customer("Noriaki", "Kasei", "nkasai", "japan", "nori@gmx.jp");
         Customer cust3 = new Customer("Heinz", "Dobler", "dobi", "dobi", "dobler.heinz@gmx.jp");
@@ -61,9 +50,22 @@ public class StartupBean {
         articleAdmin.offerArticle(art2, cust2.getId());
         articleAdmin.offerArticle(art3, cust3.getId());
 
+        // Bids article one
         auctionBean.placeBid(art1.getId(), cust4.getId(), 100.0, DateUtil.addSeconds(now, 2));
         auctionBean.placeBid(art1.getId(), cust3.getId(), 101.0, DateUtil.addSeconds(now, 3));
         auctionBean.placeBid(art1.getId(), cust2.getId(), 200.0, DateUtil.addSeconds(now, 6));
         auctionBean.placeBid(art1.getId(), cust1.getId(), 300.0, DateUtil.addSeconds(now, 6));
+
+        // Bids article two
+        auctionBean.placeBid(art2.getId(), cust4.getId(), 100.0, DateUtil.addSeconds(now, 2));
+        auctionBean.placeBid(art2.getId(), cust3.getId(), 101.0, DateUtil.addSeconds(now, 3));
+        auctionBean.placeBid(art2.getId(), cust2.getId(), 200.0, DateUtil.addSeconds(now, 4));
+        auctionBean.placeBid(art2.getId(), cust1.getId(), 300.0, DateUtil.addSeconds(now, 6));
+
+        // Bids article two
+        auctionBean.placeBid(art3.getId(), cust4.getId(), 100.0, DateUtil.addSeconds(now, 2));
+        auctionBean.placeBid(art3.getId(), cust3.getId(), 101.0, DateUtil.addSeconds(now, 3));
+        auctionBean.placeBid(art3.getId(), cust2.getId(), 200.0, DateUtil.addSeconds(now, 4));
+        auctionBean.placeBid(art3.getId(), cust1.getId(), 300.0, DateUtil.addSeconds(now, 3));
     }
 }

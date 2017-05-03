@@ -6,12 +6,10 @@ import sve2.fhbay.dao.ArticleDao;
 import sve2.fhbay.dao.BidDao;
 import sve2.fhbay.dao.CustomerDao;
 import sve2.fhbay.domain.Article;
+import sve2.fhbay.domain.ArticleState;
 import sve2.fhbay.domain.Bid;
 import sve2.fhbay.domain.Customer;
-import sve2.fhbay.exceptions.BidToLowException;
-import sve2.fhbay.exceptions.IdNotFoundException;
-import sve2.fhbay.exceptions.InvalidBidTimeRangeException;
-import sve2.fhbay.exceptions.InvalidOfferException;
+import sve2.fhbay.exceptions.*;
 import sve2.fhbay.interfaces.AuctionLocal;
 import sve2.fhbay.interfaces.AuctionRemote;
 import sve2.fhbay.util.DateUtil;
@@ -69,11 +67,15 @@ public class AuctionBean implements AuctionLocal, AuctionRemote {
         Objects.requireNonNull(price, "Price must ot be null");
         Objects.requireNonNull(toDate, "Bid toDate must ot be null");
 
-        final Date now  =DateUtil.now();
+        final Date now = DateUtil.now();
         final Article article = articleDao.findById(articleId);
 
         if (article == null) {
             throw new IdNotFoundException(Article.class.getName(), articleId);
+        }
+
+        if (article.getEndDate().compareTo(now) <= 0) {
+            throw new AuctionAlreadyEndException("Auction has already end");
         }
 
         if (toDate.compareTo(now) <= 0) {
@@ -126,7 +128,7 @@ public class AuctionBean implements AuctionLocal, AuctionRemote {
         }
 
         final List<Bid> bids = bidDao.findBidsByAndArticleIdAndEndDate(articleId, article.getEndDate());
-        // Do nothing on no bids
+        // Valid bids for article are present
         if (!bids.isEmpty()) {
             final Bid bid;
             // Only one bid has been made
@@ -147,6 +149,7 @@ public class AuctionBean implements AuctionLocal, AuctionRemote {
                 bid = bids.get(0);
                 Double price = bids.get(1).getBid() + 1;
 
+                article.setState(ArticleState.SOLD);
                 article.setFinalPrice(price);
                 article.setBuyer(bid.getBuyer());
 
@@ -155,6 +158,16 @@ public class AuctionBean implements AuctionLocal, AuctionRemote {
                 articleDao.merge(article);
                 bidDao.merge(bid);
             }
+
+            log.info("Article with id '{}' sold for '{}' to customer with id '{}'", articleId, article.getFinalPrice(), article.getBuyer().getId());
+        }
+        // no bid until end of auction present
+        else {
+            article.setState(ArticleState.UNSALEABLE);
+            article.setFinalPrice(0.0);
+
+            articleDao.merge(article);
+            log.info("Article with id '{}' unsellable", articleId);
         }
 
         log.info("Auction finished for article with id '{}'", articleId);
