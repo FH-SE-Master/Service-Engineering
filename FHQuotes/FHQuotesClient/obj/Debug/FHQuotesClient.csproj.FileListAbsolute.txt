@@ -1,0 +1,6 @@
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FHQuotes\FHQuotesClient\bin\Debug\Sve2.FHQuotes.Client.exe.config
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FHQuotes\FHQuotesClient\bin\Debug\Sve2.FHQuotes.Client.exe
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FHQuotes\FHQuotesClient\bin\Debug\Sve2.FHQuotes.Client.pdb
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FHQuotes\FHQuotesClient\obj\Debug\Sve2.FHQuotes.Client.exe
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FHQuotes\FHQuotesClient\obj\Debug\Sve2.FHQuotes.Client.pdb
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FHQuotes\FHQuotesClient\obj\Debug\FHQuotesClient.csprojResolveAssemblyReference.cache

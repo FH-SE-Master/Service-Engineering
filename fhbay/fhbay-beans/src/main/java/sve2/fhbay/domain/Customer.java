@@ -16,7 +16,7 @@ import java.util.TreeSet;
  */
 @Entity
 @NoArgsConstructor
-@ToString(doNotUseGetters = true, exclude = {"bids", "boughtArticles", "offeredArticles"})
+@ToString(doNotUseGetters = true)
 public class Customer implements Serializable {
 
     @Id
@@ -47,24 +47,6 @@ public class Customer implements Serializable {
     @Getter
     @Setter
     private String email;
-
-//    @OneToMany(mappedBy = "buyer", fetch = FetchType.LAZY)
-//    @OrderBy("fromDate, toDate, id ASC")
-//    @Getter
-//    @Setter
-//    private SortedSet<Bid> bids = new TreeSet<>();
-//
-//    @OneToMany(mappedBy = "buyer", fetch = FetchType.LAZY)
-//    @OrderBy("startDate, id ASC")
-//    @Getter
-//    @Setter
-//    private SortedSet<Article> boughtArticles = new TreeSet<>();
-//
-//    @OneToMany(mappedBy = "seller", fetch = FetchType.LAZY)
-//    @OrderBy("startDate, id ASC")
-//    @Getter
-//    @Setter
-//    private SortedSet<Article> offeredArticles = new TreeSet<>();
 
     public Customer(String firstname,
                     String lastname,

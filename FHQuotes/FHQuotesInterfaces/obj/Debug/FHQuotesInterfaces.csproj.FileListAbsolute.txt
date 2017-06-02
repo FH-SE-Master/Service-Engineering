@@ -1,0 +1,7 @@
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FHQuotes\FHQuotesInterfaces\bin\Debug\Sve2.FHQuotes.Interfaces.dll
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FHQuotes\FHQuotesInterfaces\bin\Debug\Sve2.FHQuotes.Interfaces.pdb
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FHQuotes\FHQuotesInterfaces\bin\Debug\Sve2.FhQuotes.Domain.dll
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FHQuotes\FHQuotesInterfaces\bin\Debug\Sve2.FhQuotes.Domain.pdb
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FHQuotes\FHQuotesInterfaces\obj\Debug\FHQuotesInterfaces.csprojResolveAssemblyReference.cache
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FHQuotes\FHQuotesInterfaces\obj\Debug\Sve2.FHQuotes.Interfaces.dll
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FHQuotes\FHQuotesInterfaces\obj\Debug\Sve2.FHQuotes.Interfaces.pdb

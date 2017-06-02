@@ -1,0 +1,7 @@
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FHQuotes\DaoInterfaces\bin\Debug\Sve2.FhQuotes.Dao.Interfaces.dll
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FHQuotes\DaoInterfaces\bin\Debug\Sve2.FhQuotes.Dao.Interfaces.pdb
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FHQuotes\DaoInterfaces\bin\Debug\Sve2.FhQuotes.Domain.dll
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FHQuotes\DaoInterfaces\bin\Debug\Sve2.FhQuotes.Domain.pdb
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FHQuotes\DaoInterfaces\obj\Debug\DaoInterfaces.csprojResolveAssemblyReference.cache
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FHQuotes\DaoInterfaces\obj\Debug\Sve2.FhQuotes.Dao.Interfaces.dll
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FHQuotes\DaoInterfaces\obj\Debug\Sve2.FhQuotes.Dao.Interfaces.pdb
