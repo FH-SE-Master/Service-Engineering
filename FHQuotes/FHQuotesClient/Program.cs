@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
-using Sve2.FHQuotes.Client.ServiceReference1;
+using Sve2.FhQuotes.Domain;
+using Sve2.FhQuotes.Faults;
+using Sve2.FHQuotes.Interfaces;
 
 namespace Sve2.FHQuotes.Client
 {
-
-
     class Program
     {
         const string SECURE_HTTP_QUOTES_ENDPOINT = "FHQuotesService_SecureHttpEndpoint";
@@ -23,21 +24,23 @@ namespace Sve2.FHQuotes.Client
 
         static void Main(string[] args)
         {
-            //TesQuotes();
-            DoTimings(SECURE_HTTP_QUOTES_ENDPOINT);
+            //TestErrorHandling();
+            TestQuotes();
+            /**DoTimings(SECURE_HTTP_QUOTES_ENDPOINT);
             DoTimings(UNSECURE_HTTP_QUOTES_ENDPOINT);
             DoTimings(SECURE_TCP_QUOTES_ENDPOINT);
             DoTimings(UNSECURE_TCP_QUOTES_ENDPOINT);
             DoTimings(SECURE_PIPE_QUOTES_ENDPOINT);
             DoTimings(UNSECURE_PIPE_QUOTES_ENDPOINT);
-
+    */
             Console.ReadLine();
         }
 
         private static void DoTimings(string endpointName)
         {
-            using (QuotesClient proxy = new QuotesClient(endpointName))
+            using (ChannelFactory<IQuotes> quotesFactory = new ChannelFactory<IQuotes>(endpointName))
             {
+                IQuotes proxy = quotesFactory.CreateChannel();
                 Stopwatch watch = new Stopwatch();
 
                 // Warmup
@@ -57,18 +60,28 @@ namespace Sve2.FHQuotes.Client
             }
         }
 
-        private static void TesQuotes()
+        private static void TestQuotes()
         {
-            using (QuotesClient quotesClient = new QuotesClient(SECURE_HTTP_QUOTES_ENDPOINT))
+            WcfHelper.Execute<IQuotes>(UNSECURE_HTTP_QUOTES_ENDPOINT, (proxy) =>
             {
-                foreach (var stock in quotesClient.FindAllStockSymbols())
+                foreach (var stock in proxy.FindAllStockSymbols())
                 {
-                    Quote quote = quotesClient.FindCurrentQuote("TSLA");
-                    Console.WriteLine($"stock '{stock}': / pricce: '{quote.Price}' / time: {quote.Time}");
+                    try
+                    {
+                        Quote quote = proxy.FindCurrentQuote(stock);
+                        Console.WriteLine($"stock '{stock}': / pricce: '{quote.Price}' / time: {quote.Time}");
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine($"Excxeption: {e}");
+                    }
                 }
+            });
+        }
 
-                Console.ReadLine();
-            }
+        private static void TestErrorHandling()
+        {
+            WcfHelper.Execute<IQuotes>(UNSECURE_HTTP_QUOTES_ENDPOINT, proxy => proxy.FindCurrentQuote("TSLA"));
         }
     }
 }

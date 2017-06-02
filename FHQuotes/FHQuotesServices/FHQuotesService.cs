@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Sve2.FhQuotes.Dao;
 using Sve2.FhQuotes.Dao.Interfaces;
 using Sve2.FhQuotes.Domain;
+using Sve2.FhQuotes.Faults;
 
 namespace Sve2.FHQuotes.Services
 {
@@ -21,8 +22,8 @@ namespace Sve2.FHQuotes.Services
 
         public FHQuotesService(IStockDao stockDao, IQuoteDao quoteDao)
         {
-            this.StockDao = StockDao;
-            this.QuoteDao = QuoteDao;
+            this.StockDao = stockDao;
+            this.QuoteDao = quoteDao;
         }
 
         public decimal FIndCurrentPrice(string stokSymbol)
@@ -68,7 +69,10 @@ namespace Sve2.FHQuotes.Services
             Stock stock = StockDao.FindBySymbol(stockSymbol);
             if (stock == null)
             {
-                throw new FaultException($"Stock does not exist with smybol '{stockSymbol}'");
+                throw new FaultException<StockNotFoundFault>(new StockNotFoundFault()
+                {
+                    FaultyStockSymbol = $"Stock does not exist with smybol '{stockSymbol}'"
+                });
             }
             return stock;
         }

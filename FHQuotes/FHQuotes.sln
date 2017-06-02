@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainModel", "DomainModel\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleDaoImplementation", "SimpleDaoImplementation\SimpleDaoImplementation.csproj", "{9D09D2FE-C3C3-41D9-9916-ED2889EC1E71}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkDao", "EntityFramework\EntityFrameworkDao.csproj", "{E920A365-8505-459A-A8C2-5F73703EB33D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{9D09D2FE-C3C3-41D9-9916-ED2889EC1E71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9D09D2FE-C3C3-41D9-9916-ED2889EC1E71}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9D09D2FE-C3C3-41D9-9916-ED2889EC1E71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E920A365-8505-459A-A8C2-5F73703EB33D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E920A365-8505-459A-A8C2-5F73703EB33D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E920A365-8505-459A-A8C2-5F73703EB33D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E920A365-8505-459A-A8C2-5F73703EB33D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

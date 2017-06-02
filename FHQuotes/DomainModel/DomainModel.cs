@@ -5,6 +5,22 @@ using System.Text;
 
 [assembly: CLSCompliant(true)]
 
+namespace Sve2.FhQuotes.Faults
+{
+    [DataContract]
+    public class StockNotFoundFault
+    {
+        [DataMember]
+        public string FaultyStockSymbol { get; set; }
+    }
+    [DataContract]
+    public class NoQuotesException
+    {
+        [DataMember]
+        public string FaultyStockSymbol { get; set; }
+    }
+}
+
 namespace Sve2.FhQuotes.Domain
 {
 
