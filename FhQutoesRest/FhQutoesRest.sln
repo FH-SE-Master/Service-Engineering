@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FhQutoesServices", "FhQutoesServices\FhQutoesServices.csproj", "{67BF36D6-67F4-473B-B29A-2DF192E6E9CE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainModel", "DomainModel\DomainModel.csproj", "{2E11124D-4E92-4228-97F2-CF7C568978B4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DaoInterfaces", "DaoInterfaces\DaoInterfaces.csproj", "{430F3F90-B34B-4848-ADC5-C6927C645055}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleDaoImplementation", "SimpleDaoImplementation\SimpleDaoImplementation.csproj", "{5B204008-151B-4888-AE87-1E4CAE20DFF0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleClient", "ConsoleClient\ConsoleClient.csproj", "{52AE6200-BA4D-4E1B-9E60-8E1194A23E47}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFDaoImplementation", "EFDaoImplementation\EFDaoImplementation.csproj", "{74578477-9554-46AF-90CB-E50A7A7B632D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{67BF36D6-67F4-473B-B29A-2DF192E6E9CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67BF36D6-67F4-473B-B29A-2DF192E6E9CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67BF36D6-67F4-473B-B29A-2DF192E6E9CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67BF36D6-67F4-473B-B29A-2DF192E6E9CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E11124D-4E92-4228-97F2-CF7C568978B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E11124D-4E92-4228-97F2-CF7C568978B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E11124D-4E92-4228-97F2-CF7C568978B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E11124D-4E92-4228-97F2-CF7C568978B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{430F3F90-B34B-4848-ADC5-C6927C645055}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{430F3F90-B34B-4848-ADC5-C6927C645055}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{430F3F90-B34B-4848-ADC5-C6927C645055}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{430F3F90-B34B-4848-ADC5-C6927C645055}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B204008-151B-4888-AE87-1E4CAE20DFF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B204008-151B-4888-AE87-1E4CAE20DFF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B204008-151B-4888-AE87-1E4CAE20DFF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B204008-151B-4888-AE87-1E4CAE20DFF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52AE6200-BA4D-4E1B-9E60-8E1194A23E47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52AE6200-BA4D-4E1B-9E60-8E1194A23E47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52AE6200-BA4D-4E1B-9E60-8E1194A23E47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52AE6200-BA4D-4E1B-9E60-8E1194A23E47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74578477-9554-46AF-90CB-E50A7A7B632D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74578477-9554-46AF-90CB-E50A7A7B632D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74578477-9554-46AF-90CB-E50A7A7B632D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74578477-9554-46AF-90CB-E50A7A7B632D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

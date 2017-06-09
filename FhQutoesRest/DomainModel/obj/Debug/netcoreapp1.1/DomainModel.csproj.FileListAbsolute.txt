@@ -1,0 +1,7 @@
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FhQutoesRest\DomainModel\bin\Debug\netcoreapp1.1\Sve2.FhQuotes.Domain.deps.json
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FhQutoesRest\DomainModel\bin\Debug\netcoreapp1.1\Sve2.FhQuotes.Domain.dll
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FhQutoesRest\DomainModel\bin\Debug\netcoreapp1.1\Sve2.FhQuotes.Domain.pdb
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FhQutoesRest\DomainModel\obj\Debug\netcoreapp1.1\DomainModel.csprojResolveAssemblyReference.cache
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FhQutoesRest\DomainModel\obj\Debug\netcoreapp1.1\DomainModel.AssemblyInfo.cs
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FhQutoesRest\DomainModel\obj\Debug\netcoreapp1.1\Sve2.FhQuotes.Domain.dll
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FhQutoesRest\DomainModel\obj\Debug\netcoreapp1.1\Sve2.FhQuotes.Domain.pdb

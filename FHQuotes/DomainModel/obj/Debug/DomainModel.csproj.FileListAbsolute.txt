@@ -2,3 +2,4 @@ C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FHQuote
 C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FHQuotes\DomainModel\bin\Debug\Sve2.FhQuotes.Domain.pdb
 C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FHQuotes\DomainModel\obj\Debug\Sve2.FhQuotes.Domain.dll
 C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FHQuotes\DomainModel\obj\Debug\Sve2.FhQuotes.Domain.pdb
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FHQuotes\DomainModel\obj\Debug\DomainModel.csprojResolveAssemblyReference.cache

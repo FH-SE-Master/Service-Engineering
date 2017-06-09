@@ -1,0 +1,9 @@
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FhQutoesRest\DaoInterfaces\bin\Debug\netcoreapp1.1\Sve2.FhQuotes.Dao.Interfaces.deps.json
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FhQutoesRest\DaoInterfaces\bin\Debug\netcoreapp1.1\Sve2.FhQuotes.Dao.Interfaces.dll
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FhQutoesRest\DaoInterfaces\bin\Debug\netcoreapp1.1\Sve2.FhQuotes.Dao.Interfaces.pdb
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FhQutoesRest\DaoInterfaces\bin\Debug\netcoreapp1.1\Sve2.FhQuotes.Domain.dll
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FhQutoesRest\DaoInterfaces\bin\Debug\netcoreapp1.1\Sve2.FhQuotes.Domain.pdb
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FhQutoesRest\DaoInterfaces\obj\Debug\netcoreapp1.1\DaoInterfaces.csprojResolveAssemblyReference.cache
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FhQutoesRest\DaoInterfaces\obj\Debug\netcoreapp1.1\DaoInterfaces.AssemblyInfo.cs
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FhQutoesRest\DaoInterfaces\obj\Debug\netcoreapp1.1\Sve2.FhQuotes.Dao.Interfaces.dll
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FhQutoesRest\DaoInterfaces\obj\Debug\netcoreapp1.1\Sve2.FhQuotes.Dao.Interfaces.pdb

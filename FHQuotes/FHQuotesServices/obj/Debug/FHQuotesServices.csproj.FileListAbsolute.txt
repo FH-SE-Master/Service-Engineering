@@ -22,3 +22,5 @@ C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FHQuote
 C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FHQuotes\FHQuotesServices\obj\Debug\Sve2.FHQuotes.Services.pdb
 C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FHQuotes\FHQuotesServices\bin\Debug\EntityFrameworkDao.dll
 C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FHQuotes\FHQuotesServices\bin\Debug\EntityFrameworkDao.pdb
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FHQuotes\FHQuotesServices\bin\Debug\EntityFrameworkDao.dll.config
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FHQuotes\FHQuotesServices\bin\Debug\Sve2.FHQuotes.Client.exe.config

@@ -1,0 +1,15 @@
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FhQutoesRest\FhQutoesServices\bin\Debug\netcoreapp1.1\SVe2.FhQuotesServices.deps.json
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FhQutoesRest\FhQutoesServices\bin\Debug\netcoreapp1.1\SVe2.FhQuotesServices.runtimeconfig.json
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FhQutoesRest\FhQutoesServices\bin\Debug\netcoreapp1.1\SVe2.FhQuotesServices.runtimeconfig.dev.json
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FhQutoesRest\FhQutoesServices\bin\Debug\netcoreapp1.1\SVe2.FhQuotesServices.dll
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FhQutoesRest\FhQutoesServices\bin\Debug\netcoreapp1.1\SVe2.FhQuotesServices.pdb
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FhQutoesRest\FhQutoesServices\bin\Debug\netcoreapp1.1\Sve2.FhQuotes.Dao.Interfaces.dll
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FhQutoesRest\FhQutoesServices\bin\Debug\netcoreapp1.1\Sve2.FhQuotes.Domain.dll
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FhQutoesRest\FhQutoesServices\bin\Debug\netcoreapp1.1\Sve2.FhQuotes.Dao.Interfaces.pdb
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FhQutoesRest\FhQutoesServices\bin\Debug\netcoreapp1.1\Sve2.FhQuotes.Domain.pdb
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FhQutoesRest\FhQutoesServices\obj\Debug\netcoreapp1.1\FhQutoesServices.csprojResolveAssemblyReference.cache
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FhQutoesRest\FhQutoesServices\obj\Debug\netcoreapp1.1\FhQutoesServices.AssemblyInfo.cs
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FhQutoesRest\FhQutoesServices\obj\Debug\netcoreapp1.1\SVe2.FhQuotesServices.dll
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FhQutoesRest\FhQutoesServices\obj\Debug\netcoreapp1.1\SVe2.FhQuotesServices.pdb
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FhQutoesRest\FhQutoesServices\bin\Debug\netcoreapp1.1\Sve2.FhQuotes.Dao.EntityFramework.dll
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FhQutoesRest\FhQutoesServices\bin\Debug\netcoreapp1.1\Sve2.FhQuotes.Dao.EntityFramework.pdb

@@ -1,0 +1,11 @@
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FhQutoesRest\ConsoleClient\bin\Debug\netcoreapp1.1\Sve2.FhQuotes.Client.deps.json
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FhQutoesRest\ConsoleClient\bin\Debug\netcoreapp1.1\Sve2.FhQuotes.Client.runtimeconfig.json
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FhQutoesRest\ConsoleClient\bin\Debug\netcoreapp1.1\Sve2.FhQuotes.Client.runtimeconfig.dev.json
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FhQutoesRest\ConsoleClient\bin\Debug\netcoreapp1.1\Sve2.FhQuotes.Client.dll
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FhQutoesRest\ConsoleClient\bin\Debug\netcoreapp1.1\Sve2.FhQuotes.Client.pdb
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FhQutoesRest\ConsoleClient\bin\Debug\netcoreapp1.1\Sve2.FhQuotes.Domain.dll
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FhQutoesRest\ConsoleClient\bin\Debug\netcoreapp1.1\Sve2.FhQuotes.Domain.pdb
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FhQutoesRest\ConsoleClient\obj\Debug\netcoreapp1.1\ConsoleClient.csprojResolveAssemblyReference.cache
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FhQutoesRest\ConsoleClient\obj\Debug\netcoreapp1.1\ConsoleClient.AssemblyInfo.cs
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FhQutoesRest\ConsoleClient\obj\Debug\netcoreapp1.1\Sve2.FhQuotes.Client.dll
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FhQutoesRest\ConsoleClient\obj\Debug\netcoreapp1.1\Sve2.FhQuotes.Client.pdb

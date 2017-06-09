@@ -1,0 +1,11 @@
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FhQutoesRest\SimpleDaoImplementation\bin\Debug\netcoreapp1.1\Sve2.FhQuotes.Dao.Simple.deps.json
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FhQutoesRest\SimpleDaoImplementation\bin\Debug\netcoreapp1.1\Sve2.FhQuotes.Dao.Simple.dll
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FhQutoesRest\SimpleDaoImplementation\bin\Debug\netcoreapp1.1\Sve2.FhQuotes.Dao.Simple.pdb
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FhQutoesRest\SimpleDaoImplementation\bin\Debug\netcoreapp1.1\Sve2.FhQuotes.Dao.Interfaces.dll
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FhQutoesRest\SimpleDaoImplementation\bin\Debug\netcoreapp1.1\Sve2.FhQuotes.Domain.dll
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FhQutoesRest\SimpleDaoImplementation\bin\Debug\netcoreapp1.1\Sve2.FhQuotes.Dao.Interfaces.pdb
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FhQutoesRest\SimpleDaoImplementation\bin\Debug\netcoreapp1.1\Sve2.FhQuotes.Domain.pdb
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FhQutoesRest\SimpleDaoImplementation\obj\Debug\netcoreapp1.1\SimpleDaoImplementation.csprojResolveAssemblyReference.cache
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FhQutoesRest\SimpleDaoImplementation\obj\Debug\netcoreapp1.1\SimpleDaoImplementation.AssemblyInfo.cs
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FhQutoesRest\SimpleDaoImplementation\obj\Debug\netcoreapp1.1\Sve2.FhQuotes.Dao.Simple.dll
+C:\Users\Thomas\Git-Repositories\Github\FH-SE-Master\Service-Engineering\FhQutoesRest\SimpleDaoImplementation\obj\Debug\netcoreapp1.1\Sve2.FhQuotes.Dao.Simple.pdb

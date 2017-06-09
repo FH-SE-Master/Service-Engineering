@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+    <AssemblyName>Sve2.FhQuotes.Dao.Simple</AssemblyName>
+    <RootNamespace>Sve2.FhQuotes.Dao.Simple</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DaoInterfaces\DaoInterfaces.csproj" />
+  </ItemGroup>
+
+</Project>
